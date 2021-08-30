@@ -1,0 +1,17 @@
+$primaryColor: var(--primary-color);
+$secondaryColor: var(--secondary-color);
+
+$primaryBG: var(--primary-bg);
+$secondaryBG: var(--secondary-bg);
+$tertiaryBG: var(--tertiary-bg);
+$overlay: rgba(black, 0.5);
+
+$primaryHover: rgba(white, 0.1);
+$secondaryHover: rgba(white, 0.05);
+$tertiaryHover: rgba(white, 0.25);
+
+$primaryBorderRadius: var(--primary-border-radius);
+$secondaryBorderRadius: var(--secondary-border-radius);
+
+$t: ease-in 300ms;
+$ft: ease-in 100ms;

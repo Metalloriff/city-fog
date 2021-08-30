@@ -1,0 +1,127 @@
+@import "../Variables.scss";
+
+.ToastsContainer {
+	position: fixed;
+	top: 70px; bottom: 0;
+	margin-bottom: 50px;
+
+	pointer-events: none;
+	z-index: 10000;
+
+	display: flex;
+	flex-direction: column;
+	
+	justify-content: flex-end;
+	
+	&.Top {
+		justify-content: flex-start;
+	}
+	
+	&.Bottom {
+		justify-content: flex-end;
+	}
+	
+	&.Left {
+		left: 50px;
+		
+		align-items: flex-start;
+	}
+	
+	&.Center {
+		left: 0;
+		right: 0;
+		
+		align-items: center;
+	}
+	
+	&.Right {
+		right: 50px;
+		
+		align-items: flex-end;
+	}
+	
+	.ClearButton {
+		font-weight: bolder;
+		text-align: center;
+		
+		width: 100%;
+		z-index: 10;
+		
+		opacity: 0;
+		will-change: opacity;
+		transition: opacity 500ms ease-in-out;
+		
+		text-shadow: 0 0 10px black;
+		
+		&.Visible {
+			opacity: 1;
+			pointer-events: all;
+			cursor: pointer;
+		}
+	}
+	
+	.Toast {
+		margin: 5px 0;
+		padding: 5px;
+		border-radius: $primaryBorderRadius;
+		
+		min-width: 200px;
+		
+		background-color: $tertiaryBG;
+		text-align: center;
+		
+		box-shadow: 0 0 10px rgba(black, 0.5);
+
+		animation: toast-open 500ms ease-in;
+		pointer-events: all;
+
+		&.Success { background-color: $primaryColor; }
+		&.Warning { background-color: #ffd466; }
+		&.Failure { background-color: #ff6666; }
+
+		&.Closing { animation: toast-close 500ms ease-out; }
+
+		@keyframes toast-open {
+			0% { opacity: 0; transform: scale(0); }
+			80% { transform: scale(1.25); opacity: 1; }
+		}
+
+		@keyframes toast-close {
+			0% { opacity: 1; }
+			100% { opacity: 0; transform: scale(0); }
+		}
+		
+		&:Not(.Closing) .ProgressBar {
+			animation-name: ToastProgressBar;
+			animation-timing-function: linear;
+			animation-iteration-count: 1;
+			animation-play-state: paused;
+		}
+		
+		.ProgressBarContainer {
+			background-color: rgba(black, 0.5);
+			margin-top: 5px;
+			
+			height: 5px;
+			width: 100%;
+			
+			overflow: hidden;
+			border-radius: $primaryBorderRadius;
+			
+			.ProgressBar {
+				background-color: white;
+				
+				width: 0;
+				height: 100%;
+				border-radius: $primaryBorderRadius;
+				
+				@keyframes ToastProgressBar {
+					0% { width: 100%; }
+					100% { width: 0; }
+				}
+			}
+		}
+		
+		img { border-radius: $primaryBorderRadius; }
+	}
+}
