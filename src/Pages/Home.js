@@ -98,7 +98,7 @@ export default function HomePage() {
 								</LinkWrapper>
 							</div>
 							<div className="Block">
-								<LinkWrapper href="https://github.com/Metalloriff/city-fog">
+								<LinkWrapper href="https://raw.githubusercontent.com/Metalloriff/city-fog/main/city-fog-theme.css">
 									<div className="ColorContainer">
 										<div className="Color Alt" style={{ backgroundColor: "var(--primary-color)" }}>
 											<div className="Color" style={{ fontSize: "3em" }}><FontAwesomeIcon icon={faCode}/></div>
