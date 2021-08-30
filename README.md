@@ -1,13 +1,9 @@
 ![Banner](Banner.svg)
 
-#
-
-## [Official Site](https://metalloriff.github.io/city-fog)
-
-#
+## [Visit Site](https://metalloriff.github.io/city-fog)
 
 ## [CSS Import Variables](city-fog-theme.css)
-`@import "gotta add this kekw"`
+`@import "https://raw.githubusercontent.com/Metalloriff/city-fog/main/city-fog-theme.css"`
 ```css
 :root {
     /* Background colors */
