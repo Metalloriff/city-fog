@@ -1,121 +1,122 @@
 ﻿@import "../Variables";
 
 .PaletteBlock {
-  width: max-content;
-  transform: translate(0);
-  
-  margin: 0 auto;
-  margin-top: 20vh;
-  
-  &:First-Child {
-    margin-top: 55vh;
-  }
-  
-  &:Last-Child {
-    margin-bottom: 10vh;
-  }
-  
-  display: flex;
-  flex-direction: column;
-  
-  .Title {
-    color: var(--primary-color);
-    font-weight: bolder;
-    font-size: 1.7em;
-  }
-  
-  .Description {
-    white-space: pre-line;
-    font-size: 1.5em;
-    
-    max-width: 70vw;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .Blocks {
-    border-radius: var(--secondary-border-radius);
-    overflow: hidden;
-    
-    width: max-content;
-    max-width: 75vw;
-    
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    
-    .Block {
-      font-weight: bolder;
-      font-family: monospace;
+	position: relative;
+	width: max-content;
+	transform: translate(0);
 
-      font-size: 1.2em;
-      text-align: center;
-      
-      margin: 7px;
-      
-      .ColorContainer {
-        position: relative;
-        width: 100px;
-        height: 100px;
-        
-        cursor: pointer;
-        
-        > .Color {
-          box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
-          transition: box-shadow $ft, transform $ft;
-          
-          > div {
-            position: absolute;
+	margin: 0 auto;
+	margin-top: 20vh;
+	max-width: 80vw;
 
-            &.Hover {
-              opacity: 0;
-              font-size: 2em;
-            }
+	&:first-child {
+		margin-top: 55vh;
+	}
 
-            transition: opacity $ft;
-          }
-          
-          &.Alt {
-            
-          }
-        }
+	&:last-child {
+		margin-bottom: 10vh;
+	}
 
-        &:Hover > .Color {
-          box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
-          transform: scale(0.9);
+	display: flex;
+	flex-direction: column;
 
-          > div {
-            opacity: 0;
+	.Title {
+		color: var(--primary-color);
+		font-weight: bolder;
+		font-size: 1.7em;
+	}
 
-            &.Hover {
-              opacity: 1;
-            }
-          }
-        }
+	.Description {
+		white-space: pre-line;
+		font-size: 1.5em;
 
-        &:Active > .Color {
-          transform: scale(0.7);
-        }
-      }
-      
-      .Color {
-        width: 100%;
-        height: 100%;
-        
-        border-radius: var(--primary-border-radius);
-        
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-        color: white;
-        text-transform: uppercase;
-      }
-      
-      .Hex {
-        padding: 10px;
-        padding-bottom: 5px;
-      }
-    }
-  }
+		max-width: 70vw;
+		margin-top: 10px;
+		margin-bottom: 20px;
+	}
+
+	.Blocks {
+		border-radius: var(--secondary-border-radius);
+		overflow: hidden;
+
+		width: max-content;
+		max-width: 75vw;
+
+		display: flex;
+		flex-wrap: wrap;
+		// justify-content: center;
+
+		.Block {
+			font-weight: bolder;
+			font-family: monospace;
+
+			font-size: 1.2em;
+			text-align: center;
+
+			margin: 7px;
+
+			.ColorContainer {
+				position: relative;
+				width: 100px;
+				height: 100px;
+
+				cursor: pointer;
+
+				> .Color {
+					box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+					transition: box-shadow $ft, transform $ft;
+
+					> div {
+						position: absolute;
+
+						&.Hover {
+							opacity: 0;
+							font-size: 2em;
+						}
+
+						transition: opacity $ft;
+					}
+
+					&.Alt {
+					}
+				}
+
+				&:hover > .Color {
+					box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
+					transform: scale(0.9);
+
+					> div {
+						opacity: 0;
+
+						&.Hover {
+							opacity: 1;
+						}
+					}
+				}
+
+				&:active > .Color {
+					transform: scale(0.7);
+				}
+			}
+
+			.Color {
+				width: 100%;
+				height: 100%;
+
+				border-radius: var(--primary-border-radius);
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				color: white;
+				text-transform: uppercase;
+			}
+
+			.Hex {
+				padding: 10px;
+				padding-bottom: 5px;
+			}
+		}
+	}
 }

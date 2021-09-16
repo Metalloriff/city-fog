@@ -5,13 +5,11 @@ import Skyline02 from "../Assets/BG/CitySkyline02.svg";
 import Rainbow from "../Assets/Rainbow.svg";
 import Vroom from "../Assets/Vroom.svg";
 import Icon from "../Assets/Icon.svg";
-import {useEventListener} from "../Classes/Hooks";
+import { useEventListener } from "../Classes/Hooks";
 import PaletteBlock from "../Components/PaletteBlock";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClipboard, faCode, faExternalLinkAlt, faFileContract } from "@fortawesome/free-solid-svg-icons";
 import LinkWrapper from "../Components/LinkWrapper";
-import { faGithub } from "@fortawesome/fontawesome-free-brands"
 import Toasts from "../Components/Toasts";
+import { Clipboard, Code, Edit, ExternalLink, GitHub } from "react-feather";
 
 /**
  * Copies the specified text to the clipboard
@@ -41,32 +39,32 @@ function url(_) {
 export default function HomePage() {
 	const skyline01 = React.useRef();
 	const skyline02 = React.useRef();
-	
+
 	useEventListener("scroll", () => {
 		const value = window.scrollY;
 		const targetValue = 2000;
-		
+
 		skyline01.current.style.backgroundPositionX = `-${((value / targetValue) * 100) + 20}%`;
 		skyline02.current.style.backgroundPositionX = `${(value / targetValue) * 100}%`;
 	}, { target: window, init: true });
-	
+
 	return (
 		<div className="MainPage">
 			<div className="Background">
-				<div className="Skyline" style={{ backgroundImage: url(Skyline01) }} ref={skyline01}/>
-				<div className="Skyline" style={{ backgroundImage: url(Skyline02) }} ref={skyline02}/>
-			</div>
-			
-			<div className="Background">
-				<div className="Rainbow" style={{ backgroundImage: url(Rainbow) }}/>
+				<div className="Skyline" style={{ backgroundImage: url(Skyline01) }} ref={skyline01} />
+				<div className="Skyline" style={{ backgroundImage: url(Skyline02) }} ref={skyline02} />
 			</div>
 
 			<div className="Background">
-				<div className="Vroom" style={{ backgroundImage: url(Vroom) }}/>
+				<div className="Rainbow" style={{ backgroundImage: url(Rainbow) }} />
 			</div>
-			
+
+			<div className="Background">
+				<div className="Vroom" style={{ backgroundImage: url(Vroom) }} />
+			</div>
+
 			<div className="Head">
-				<img className="Icon" src={Icon} alt="Icon"/>
+				<img className="Icon" src={Icon} alt="Icon" />
 				<div className="Header">
 					<div className="MainHeader">City Fog</div>
 					<div className="Desc">
@@ -74,7 +72,7 @@ export default function HomePage() {
 					</div>
 				</div>
 			</div>
-			
+
 			<div className="Sections">
 				<div className="Section BackgroundColors">
 					<div className="PaletteBlock">
@@ -90,8 +88,8 @@ export default function HomePage() {
 								<LinkWrapper href="https://github.com/Metalloriff/city-fog">
 									<div className="ColorContainer">
 										<div className="Color Alt" style={{ backgroundColor: "var(--primary-color)" }}>
-											<div className="Color" style={{ fontSize: "3em" }}><FontAwesomeIcon icon={faGithub}/></div>
-											<div className="Hover"><FontAwesomeIcon icon={faExternalLinkAlt}/></div>
+											<div className="Color" style={{ fontSize: "3em" }}><GitHub /></div>
+											<div className="Hover"><ExternalLink /></div>
 										</div>
 									</div>
 									<div className="Hex">GitHub</div>
@@ -101,8 +99,8 @@ export default function HomePage() {
 								<LinkWrapper href="https://raw.githubusercontent.com/Metalloriff/city-fog/main/city-fog-theme.css">
 									<div className="ColorContainer">
 										<div className="Color Alt" style={{ backgroundColor: "var(--primary-color)" }}>
-											<div className="Color" style={{ fontSize: "3em" }}><FontAwesomeIcon icon={faCode}/></div>
-											<div className="Hover"><FontAwesomeIcon icon={faExternalLinkAlt}/></div>
+											<div className="Color" style={{ fontSize: "3em" }}><Code /></div>
+											<div className="Hover"><ExternalLink /></div>
 										</div>
 									</div>
 									<div className="Hex">CSS Vars</div>
@@ -111,15 +109,15 @@ export default function HomePage() {
 							<div className="Block" onClick={() => copyToClipboard("https://metalloriff.github.io/city-fog")}>
 								<div className="ColorContainer">
 									<div className="Color Alt" style={{ backgroundColor: "var(--primary-color)" }}>
-										<div className="Color" style={{ fontSize: "2.5em" }}><FontAwesomeIcon icon={faFileContract}/></div>
-										<div className="Hover"><FontAwesomeIcon icon={faClipboard}/></div>
+										<div className="Color" style={{ fontSize: "2.5em" }}><Edit /></div>
+										<div className="Hover"><Clipboard /></div>
 									</div>
 								</div>
 								<div className="Hex">Credit</div>
 							</div>
 						</div>
 					</div>
-					
+
 					<PaletteBlock
 						title="Background Colors"
 						description={`These are used for page and item backgrounds.
@@ -130,7 +128,7 @@ export default function HomePage() {
 						Secondary:#364758
 						Tertiary:#42566a
 					</PaletteBlock>
-					
+
 					<PaletteBlock
 						title="Accent Colors"
 						description={`These are used for contrasting important elements and text.`}
@@ -138,7 +136,7 @@ export default function HomePage() {
 						Primary:#7bb1bd
 						Secondary:#BD7BA2
 					</PaletteBlock>
-					
+
 					<PaletteBlock
 						title="Rainbow Accent Colors"
 						description={`These serve different purposes based on the context;
@@ -152,7 +150,7 @@ export default function HomePage() {
 						Purple:#9a88bf
 						Pink:#be7aa1
 					</PaletteBlock>
-					
+
 					<PaletteBlock
 						title="Hover Modifiers"
 						description={`These modifiers should be used for clarity,
@@ -164,7 +162,7 @@ export default function HomePage() {
 						Secondary:rgba(255,255,255,0.18)
 						Tertiary:rgba(255,255,255,0.075)
 					</PaletteBlock>
-					
+
 					<PaletteBlock
 						title="Text Colors"
 						description={`The base color should be used as the base text color.
@@ -175,7 +173,7 @@ export default function HomePage() {
 						Base:#c3ccd4
 						Bold:white
 					</PaletteBlock>
-					
+
 					<div className="PaletteBlock">
 						<div className="Title">Border Radii</div>
 						<div className="Description">
@@ -183,13 +181,13 @@ export default function HomePage() {
 							  Smaller items (ex: buttons) should use the primary border radius.
 							  Larger items (ex: modals, popouts) should use the secondary border radius.`}
 						</div>
-						
+
 						<div className="Blocks">
 							<div className="Block">
 								<div className="ColorContainer" onClick={() => copyToClipboard("4px")}>
 									<div className="Color Alt" style={{ backgroundColor: "var(--primary-color)", borderRadius: 4 }}>
 										<div className="Color">4px</div>
-										<div className="Hover"><FontAwesomeIcon icon={faClipboard}/></div>
+										<div className="Hover"><Clipboard /></div>
 									</div>
 								</div>
 								<div className="Hex">Primary</div>
@@ -198,7 +196,7 @@ export default function HomePage() {
 								<div className="ColorContainer">
 									<div className="Color Alt" style={{ backgroundColor: "var(--primary-color)", borderRadius: 7 }}>
 										<div className="Color">7px</div>
-										<div className="Hover"><FontAwesomeIcon icon={faClipboard}/></div>
+										<div className="Hover"><Clipboard /></div>
 									</div>
 								</div>
 								<div className="Hex">Secondary</div>
@@ -215,27 +213,27 @@ export default function HomePage() {
 						<div className="Blocks">
 							<div className="Block">
 								<div className="ColorContainer" onClick={() => copyToClipboard("0 0 7px rgba(0, 0, 0, 0.2)")}
-									 style={{ width: 300, margin: 20 }}>
+									style={{ width: 300, margin: 20 }}>
 									<div className="Color Alt" style={{
 										backgroundColor: "var(--tertiary-bg)",
 										boxShadow: "0 0 7px rgba(0, 0, 0, 0.2)"
 									}}>
 										<div className="Color">0 0 7px rgba(0, 0, 0, 0.2)</div>
-										<div className="Hover"><FontAwesomeIcon icon={faClipboard}/></div>
+										<div className="Hover"><Clipboard /></div>
 									</div>
 								</div>
 								<div className="Hex">Primary</div>
 							</div>
-							
+
 							<div className="Block">
 								<div className="ColorContainer" onClick={() => copyToClipboard("0 0 12px rgba(0, 0, 0, 0.35)")}
-									 style={{ width: 300, margin: 20 }}>
+									style={{ width: 300, margin: 20 }}>
 									<div className="Color Alt" style={{
 										backgroundColor: "var(--tertiary-bg)",
 										boxShadow: "0 0 12px rgba(0, 0, 0, 0.35)"
 									}}>
 										<div className="Color">0 0 12px rgba(0, 0, 0, 0.35)</div>
-										<div className="Hover"><FontAwesomeIcon icon={faClipboard}/></div>
+										<div className="Hover"><Clipboard /></div>
 									</div>
 								</div>
 								<div className="Hex">Secondary</div>
@@ -243,13 +241,13 @@ export default function HomePage() {
 
 							<div className="Block">
 								<div className="ColorContainer" onClick={() => copyToClipboard("0 0 15px rgba(0, 0, 0, 0.5)")}
-									 style={{ width: 300, margin: 20 }}>
+									style={{ width: 300, margin: 20 }}>
 									<div className="Color Alt" style={{
 										backgroundColor: "var(--tertiary-bg)",
 										boxShadow: "0 0 15px rgba(0, 0, 0, 0.5)"
 									}}>
 										<div className="Color">0 0 15px rgba(0, 0, 0, 0.5)</div>
-										<div className="Hover"><FontAwesomeIcon icon={faClipboard}/></div>
+										<div className="Hover"><Clipboard /></div>
 									</div>
 								</div>
 								<div className="Hex">Tertiary</div>
@@ -267,28 +265,28 @@ export default function HomePage() {
 							<div className="Blocks">
 								<div className="Block">
 									<div className="ColorContainer" onClick={() => copyToClipboard("Verdana, sans-serif")}
-										 style={{ width: 300 }}>
+										style={{ width: 300 }}>
 										<div className="Color Alt" style={{
 											backgroundColor: "var(--tertiary-bg)",
 											fontFamily: "Verdana, sans-serif",
 											textTransform: "unset"
 										}}>
 											<div className="Color" style={{ textTransform: "unset" }}>The feeling sets in; but only after dark.</div>
-											<div className="Hover"><FontAwesomeIcon icon={faClipboard}/></div>
+											<div className="Hover"><Clipboard /></div>
 										</div>
 									</div>
 									<div className="Hex">Primary - Verdana</div>
 								</div>
 								<div className="Block">
 									<div className="ColorContainer" onClick={() => copyToClipboard("monospace")}
-										 style={{ width: 300 }}>
+										style={{ width: 300 }}>
 										<div className="Color Alt" style={{
 											backgroundColor: "var(--tertiary-bg)",
 											fontFamily: "monospace",
 											textTransform: "unset"
 										}}>
 											<div className="Color" style={{ textTransform: "unset" }}>The feeling sets in; but only after dark.</div>
-											<div className="Hover"><FontAwesomeIcon icon={faClipboard}/></div>
+											<div className="Hover"><Clipboard /></div>
 										</div>
 									</div>
 									<div className="Hex">Secondary - monospace</div>

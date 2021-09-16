@@ -1,131 +1,132 @@
 @import "../Variables.scss";
 
 .MainPage {
-  overflow: hidden;
-  
-  .Background, .Background > .Skyline {
-    position: absolute;
-    width: 100vw;
-    height: 420vh;
-    
-    pointer-events: none;
-    
-    overflow-x: hidden;
-    overflow-y: visible;
-  }
+	overflow: hidden;
 
-  .Background > .Skyline {
-    background-size: 80% 65%;
-    background-repeat: repeat-x;
+	.Background,
+	.Background > .Skyline {
+		position: absolute;
+		width: 100vw;
+		height: 420vh;
 
-    &:First-Child {
-      background-size: 70% 65%;
-      background-position: -75% 0;
-    }
+		pointer-events: none;
 
-    &:Last-Child {
-      top: 27vh;
-    }
-  }
-  
-  .Background > .Rainbow {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    
-    background-repeat: no-repeat;
-    
-    top: 250vh;
-    right: -60vw;
-    transform: rotateZ(20deg);
-  }
+		overflow-x: hidden;
+		overflow-y: visible;
+	}
 
-  .Background > .Vroom {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
+	.Background > .Skyline {
+		background-size: 80% 65%;
+		background-repeat: repeat-x;
 
-    background-repeat: no-repeat;
-    background-size: 120% 120%;
+		&:first-child {
+			background-size: 70% 65%;
+			background-position: -75% 0;
+		}
 
-    top: 320vh;
-    left: -30vw;
-  }
-  
-  .Head {
-    position: relative;
-    transform: translateY(-50px);
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    margin-top: 200px;
-    
-    .Icon {
-      width: 256px;
-    }
-    
-    .Header {
-      display: flex;
-      flex-direction: column;
+		&:last-child {
+			top: 27vh;
+		}
+	}
 
-      font-size: 3em;
-      font-weight: bolder;
+	.Background > .Rainbow {
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
 
-      margin-left: 50px;
-      max-width: 50%;
-      
-      .MainHeader {
-        color: $primaryColor;
-      }
-      
-      .Desc {
-        color: rgba(white, 0.7);
-        font-weight: lighter;
-        font-family: monospace;
-        
-        margin-top: 20px;
-      }
-    }
-  }
+		background-repeat: no-repeat;
+
+		top: 250vh;
+		right: -60vw;
+		transform: rotateZ(20deg);
+	}
+
+	.Background > .Vroom {
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+
+		background-repeat: no-repeat;
+		background-size: 120% 120%;
+
+		top: 320vh;
+		left: -30vw;
+	}
+
+	.Head {
+		position: relative;
+		transform: translateY(-50px);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		margin-top: 200px;
+
+		.Icon {
+			width: 256px;
+		}
+
+		.Header {
+			display: flex;
+			flex-direction: column;
+
+			font-size: 3em;
+			font-weight: bolder;
+
+			margin-left: 50px;
+			max-width: 50%;
+
+			.MainHeader {
+				color: $primaryColor;
+			}
+
+			.Desc {
+				color: rgba(white, 0.7);
+				font-weight: lighter;
+				font-family: monospace;
+
+				margin-top: 20px;
+			}
+		}
+	}
 }
 
 #root .Mobile .MainPage {
-  font-size: 0.8em;
-  
-  .Background > .Skyline {
-    background-size: 200% 100%;
-    height: 300vh;
-    margin-top: -40vh;
-    
-    &:First-Child {
-      background-size: 180% 100%;
-    }
-  }
-  
-  .Background > .Rainbow {
-    left: 20vw;
-  }
-  
-  .Background > .Vroom {
-    width: 150vw;
-    left: -40vw;
-  }
-  
-  .Head {
-    flex-direction: column;
-    text-align: center;
-    
-    margin-top: 100px;
-    
-    .Header {
-      max-width: 90%;
-      margin: 0;
-      
-      .Desc {
-        font-size: 0.8em;
-      }
-    }
-  }
+	font-size: 0.8em;
+
+	.Background > .Skyline {
+		background-size: 200% 100%;
+		height: 300vh;
+		margin-top: -40vh;
+
+		&:first-child {
+			background-size: 180% 100%;
+		}
+	}
+
+	.Background > .Rainbow {
+		left: 20vw;
+	}
+
+	.Background > .Vroom {
+		width: 150vw;
+		left: -40vw;
+	}
+
+	.Head {
+		flex-direction: column;
+		text-align: center;
+
+		margin-top: 100px;
+
+		.Header {
+			max-width: 90%;
+			margin: 0;
+
+			.Desc {
+				font-size: 0.8em;
+			}
+		}
+	}
 }
