@@ -1,4 +1,4 @@
-![Banner](Banner.svg)
+![Banner](Banner.png)
 
 ## [Visit Site](https://metalloriff.github.io/city-fog)
 
