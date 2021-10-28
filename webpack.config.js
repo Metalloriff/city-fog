@@ -7,7 +7,6 @@ const config = require("./package.json").siteProperties;
 // Plugins
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const PwaManifestPlugin = require("webpack-pwa-manifest");
 
 const assetFileExtensions = [
 	"png",
@@ -20,14 +19,14 @@ const assetFileExtensions = [
 ];
 
 module.exports = env => ({
-	mode: "development",
+	mode: "production",
 	entry: "./src/index.jsx",
 	output: {
 		path: path.join(__dirname, "docs"),
 		filename: "assets/scripts/[name].js",
 		chunkFilename: "assets/scripts/[name].js",
 		assetModuleFilename: "assets/media/[name][ext]",
-		publicPath: "/"
+		publicPath: "/city-fog/"
 	},
 	module: {
 		rules: [
@@ -129,22 +128,6 @@ module.exports = env => ({
 		new webpack.ProvidePlugin({
 			React: "react",
 			ReactDOM: "react-dom"
-		}),
-		new PwaManifestPlugin({
-			name: config.name,
-			short_name: config.name,
-			description: config.description,
-			background_color: "#2c3946",
-			crossorigin: null,
-			icons: [{
-				src: path.resolve(__dirname, "public", "logo512.png"),
-				sizes: [96, 128, 192, 256, 384, 512]
-			}],
-			"theme-color": config.color,
-			display: "standalone",
-
-			fingerprints: false,
-			publicPath: "."
 		})
 	].filter(plugin => plugin),
 	devServer: {
