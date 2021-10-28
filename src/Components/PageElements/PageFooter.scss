@@ -1,88 +1,90 @@
 ﻿@import "../../Variables";
 
 .App > footer {
-	background-color: rgba(black, 0.2);
+	background-color: rgba(black, 0.1);
+	backdrop-filter: blur(20px);
+
 	--primary-color: var(--cf-purple);
-	
+
 	.LeftSections {
 		> * {
 			padding: 20px;
 		}
 	}
-	
+
 	.HeadSection {
 		> div {
 			margin-left: 15px;
-			
+
 			> * {
 				margin: 5px 0;
 			}
 		}
-		
+
 		.FlexCenter {
 			margin-bottom: 20px;
 		}
-		
+
 		h2 {
 			color: var(--primary-color);
-			
+
 			margin: 0;
 			margin-left: -0.05em;
 		}
-		
+
 		.Logo {
 			width: 50px;
 			height: 50px;
-			
+
 			border-radius: 100%;
 		}
 	}
-	
+
 	.ContactSection {
 		padding-top: 0;
-		
+
 		.ContactEntry {
 			margin: 0 10px;
-			
+
 			cursor: pointer;
 			transition: color $ft;
-			
-			&:Hover {
+
+			&:hover {
 				color: white;
 			}
-			
+
 			.TooltipContainer {
 				bottom: 110%;
 			}
 		}
 	}
-	
+
 	.MiddleSection {
 		margin: auto;
 	}
-	
+
 	.LinksSection {
 		display: grid;
 		margin-right: 10px;
-		
+
 		grid-template-columns: repeat(3, 140px);
 
 		@media (max-width: 450px) {
 			display: flex;
 			flex-direction: column;
 		}
-		
+
 		> * {
 			margin: 15px 0;
 		}
-		
+
 		.Copyright {
 			grid-column-start: 2;
 			grid-column-end: 4;
-			
+
 			font-family: monospace;
 			font-size: 1.23em;
-			
+
 			opacity: 0.8;
 		}
 	}

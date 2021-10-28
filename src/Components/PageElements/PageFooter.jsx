@@ -1,15 +1,15 @@
 ﻿import React from "react";
-import "./PageFooter.scss";
 import * as Feather from "react-feather";
-
 import Icon from "../../Assets/icon50x50.png";
 import Heart from "../../Assets/TwemojiHeart.svg";
-import Tooltip from "../Tooltip";
 import { copyToClipboard } from "../../Pages/Home";
+import Tooltip from "../Tooltip";
+import "./PageFooter.scss";
+
 
 export default function PageFooter() {
 	const contacts = {
-		website: () => window.open("https://metalloriff.github.io/", "_blank"),
+		website: () => window.open("https://kinzoku.one/", "_blank"),
 		github: () => window.open("https://github.com/metalloriff", "_blank"),
 		twitter: () => window.open("https://twitter.com/Metalloriff", "_blank"),
 		email: () => window.open("mailto:metalloriff@gmail.com", "_blank"),

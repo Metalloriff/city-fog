@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="1920px" height="4000px" viewBox="0 0 1920 4000" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <rect width="1920" height="4000" id="artboard_1" />
+    <clipPath id="clip_1">
+      <use xlink:href="#artboard_1" clip-rule="evenodd" />
+    </clipPath>
+  </defs>
+  <g id="CitySkyline01" clip-path="url(#clip_1)">
+    <use xlink:href="#artboard_1" stroke="none" fill="#2C3946" fill-opacity="0" />
+    <path d="M10.5 559L62 559L62 425L88.5 425L88.5 382.5L132.5 382.5L132.5 102.5L156.5 126.5L156.5 181L173 197.5L173 425L191 425L191 472.5L209.5 472.5L209.5 367.5L317.5 367.5L317.5 425L353 425L353 324L378 324L378 294L407 265L407 152L445 152L445 265L471.5 291.5L471.5 324L445 367.5L445 436.5L528.5 436.5L528.5 197.5L545 197.5L545 32.9999L545 32.9999L545 32.9999L561.5 32.9999L561.5 197.5L605.5 241.5L605.5 436.5L654 485L727.5 485L727.5 408L756.5 408L756.5 341.5L812 286L812 485L874 547L874 193.5L1041.5 361L1041.5 547L1076.5 547L1076.5 197L1133 140.5L1133 197.5L1133 547L1201 615L1201 241.5L1380.5 241.5L1380.5 615L1491 615L1491 547L1549 547L1549 102.5L1651.5 0L1651.5 547L1719.5 547L1719.5 615L1779 615L1779 408L1871 408L1871 615L1930 559L1954.5 559L1954.5 839.5L0 839.5L10.5 559Z" transform="translate(-10 272.00012)" id="New-shape" fill="#364657" fill-rule="evenodd" stroke="none" />
+    <path d="M0 0L1921 0L1921 2395.5C1921 2395.5 1664.48 2495.5 1330 2495.5C995.521 2495.5 927.056 2295.5 581 2295.5C234.944 2295.5 0 2395.5 0 2395.5L0 0Z" transform="translate(0 1087)" id="Rectangle" fill="#364657" fill-rule="evenodd" stroke="none" />
+  </g>
+</svg>

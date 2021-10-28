@@ -1,35 +1,39 @@
 {
-	"name": "boilerplate",
+	"name": "city-fog",
 	"version": "0.0.1",
+	"siteProperties": {
+		"name": "City Fog",
+		"embedTitle": "City Fog Theme",
+		"description": "A cyberpunk-esque color pallette/theme, designed to give a cold but lively feel.",
+		"color": "#7bb1bd"
+	},
 	"private": false,
 	"dependencies": {
-		"node-sass": "^6.0.1",
+		"lodash": "^4.17.21",
 		"react": "^17.0.2",
-		"react-feather": "^2.0.9",
 		"react-dom": "^17.0.2",
-		"react-responsive": "^9.0.0-beta.3",
-		"react-scripts": "^4.0.3"
+		"react-feather": "^2.0.9",
+		"regenerator-runtime": "^0.13.9"
+	},
+	"devDependencies": {
+		"@svgr/webpack": "^5.5.0",
+		"@swc/cli": "^0.1.51",
+		"@swc/core": "^1.2.93",
+		"css-loader": "^6.3.0",
+		"file-loader": "^6.2.0",
+		"html-webpack-plugin": "^5.3.2",
+		"mini-css-extract-plugin": "^2.4.2",
+		"sass": "^1.42.1",
+		"sass-loader": "^12.1.0",
+		"style-loader": "^3.3.0",
+		"swc-loader": "^0.1.15",
+		"webpack": "^5.58.0",
+		"webpack-cli": "^4.9.0",
+		"webpack-dev-server": "^4.3.1",
+		"webpack-pwa-manifest": "^4.3.0"
 	},
 	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
-	},
-	"eslintConfig": {
-		"extends": "react-app"
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
-	"homepage": "./"
+		"start": "npx webpack serve --open",
+		"build": "npx webpack --mode production --env=mode=production"
+	}
 }

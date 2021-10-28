@@ -5,12 +5,18 @@
 	width: max-content;
 	transform: translate(0);
 
+	background: $secondaryBG;
+	padding: 30px;
+	border-radius: 15px;
+	overflow: hidden;
+
 	margin: 0 auto;
 	margin-top: 20vh;
 	max-width: 80vw;
 
 	&:first-child {
-		margin-top: 55vh;
+		margin-top: 0;
+		margin-bottom: 75vh;
 	}
 
 	&:last-child {
@@ -19,6 +25,79 @@
 
 	display: flex;
 	flex-direction: column;
+
+	box-shadow: 0 0 12px 5px rgba(black, 0.08);
+
+	> .TitleBarMockup {
+		background-color: $tertiaryBG;
+
+		margin: -30px;
+		margin-bottom: 20px;
+		padding: 10px 15px;
+
+		> .Title {
+			font-weight: bolder;
+			font-size: 1.1em;
+
+			filter: brightness(1.15);
+		}
+
+		> .Buttons {
+			margin-left: auto;
+			gap: 10px;
+
+			> .Button {
+				width: 15px;
+				height: 15px;
+
+				border-radius: 50%;
+
+				&.Minimize {
+					background: var(--green);
+				}
+
+				&.Restore {
+					background: var(--yellow);
+				}
+
+				&.Close {
+					background: var(--red);
+				}
+			}
+		}
+	}
+
+	.ImageBlock {
+		position: relative;
+		width: 100%;
+		max-width: 800px;
+
+		overflow: hidden;
+		border-radius: 15px;
+
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
+
+		> .Image {
+			width: 100%;
+			height: 100%;
+
+			object-fit: cover;
+		}
+
+		> .Author {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+
+			display: block;
+			background: var(--secondary-bg);
+
+			padding: 5px 15px;
+			border-radius: 100px;
+		}
+	}
 
 	.Title {
 		color: var(--primary-color);
@@ -64,7 +143,10 @@
 
 				> .Color {
 					box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
-					transition: box-shadow $ft, transform $ft;
+					transition: border-width $ft;
+
+					box-sizing: border-box;
+					border: 0 solid currentColor;
 
 					> div {
 						position: absolute;
@@ -76,14 +158,10 @@
 
 						transition: opacity $ft;
 					}
-
-					&.Alt {
-					}
 				}
 
 				&:hover > .Color {
-					box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
-					transform: scale(0.9);
+					border-width: 4px;
 
 					> div {
 						opacity: 0;
@@ -103,7 +181,7 @@
 				width: 100%;
 				height: 100%;
 
-				border-radius: var(--primary-border-radius);
+				border-radius: 500px;
 
 				display: flex;
 				align-items: center;
